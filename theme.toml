@@ -18,4 +18,3 @@ features = ['some', 'awesome', 'features']
 [author]
   name = 'Sebastian Broekhoven'
   homepage = 'https://github.com/sbroekhoven'
-
