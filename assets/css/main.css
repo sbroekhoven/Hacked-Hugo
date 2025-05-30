@@ -1,22 +1,237 @@
+:root {
+  --header-bg:#192c3c;
+  --header-fg:#ffffff;
+
+  --footer-bg:#192c3c;
+  --footer-fg:#ffffff;
+
+  --nav-bg:#27445D;
+  --nav-fg:#EFE9D5;
+
+  --nav-item-bg:#192c3c;
+  --nav-item-fg:#f2ff00;
+
+  --nav-hover-bg:#f2ff00;
+  --nav-hover-fg:#192c3c;
+
+  --aside-bg:#FAF9F7;
+  --aside-fg:#333333;
+
+  --main-bg:#FAF9F7;
+  --main-fg:#333333;
+
+  --body-bg:#27445D;
+  --charcoal:#333333;
+  --signal-orange: #f2ff00;
+}
+
+/*
+#FEDA48
+#416DB4
+#545454
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+*/
+
 body {
-  color: #222;
-  font-family: sans-serif;
-  line-height: 1.5;
-  margin: 1rem;
-  max-width: 768px;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  background: var(--body-bg);
 }
 
 header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
+  background: var(--header-bg);
+  color: var(--header-fg);
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+}
+
+nav {
+  background: var(--nav-bg);
+  color: var(--nav-fg);
+  padding: 0.5em;
+  text-align: center;
+  width: 100%;
+}
+
+nav a {
+  color: var(--nav-item-fg);
+  background: var(--nav-item-bg);
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background: var(--nav-hover-bg);
+  color: var(--nav-hover-fg);
+  border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+main {
+  flex: 3;
+  color: var(--main-fg);
+  background: var(--main-bg);
+  padding: 20px;
+  line-height: 1.6; /* Increased line height for better readability */
+}
+
+p {
+  font-size: 1.1em; /* Slightly increase font size */
+  color: var(--charcoal);
+  line-height: 1.6; /* Ensures paragraphs also have better line spacing */
+}
+
+@font-face {
+  font-family: 'HACKED';  /* Give the font a name */
+  src: url('/font/HACKED.ttf') format('truetype'); /* Path to your font file */
+}
+
+@font-face {
+  font-family: "Pixel Operator Bold";
+  src: url("/font/PixelOperator-Bold.eot?") format("eot"), url("/font/PixelOperator-Bold.woff") format("woff"), url("/font/PixelOperator-Bold.ttf") format("truetype"), url("/font/PixelOperator-Bold.svg#PixelOperator-Bold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4 {
+  font-family: Verdana, sans-serif;
+  letter-spacing: 1px;  /* Adds a bit of spacing between letters for emphasis */
+  text-transform: capitalize;  /* Capitalize the first letter of each word */
+  margin-bottom: 0.5em;
+}
+
+h2, h3, h4 {
+  margin-bottom: 15px; /* Adds space after headings */
+}
+
+main img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+aside {
+  flex: 1;
+  background: var(--aside-bg);
+  color: var(--charcoal);
+  padding: 20px;
+  margin-left: 20px;
 }
 
 footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+  background: var(--footer-bg);  /* Keep the footer background dark */
+  color: var(--footer-fg);  /* Make the text white */
+  text-align: center;
+  padding: 1em;
+  width: 100%;
 }
 
-a {
-  color: #00e;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  aside {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+.website-name {
+  font-family: "HACKED", sans-serif;
+  font-size: 4.0em;
+}
+
+.blog-overview {
+  margin-top: 30px;
+}
+
+.blog-post {
+  background: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h4 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.blog-post .date {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.blog-post .excerpt {
+  font-size: 1em;
+  color: #333;
+  margin-top: 10px;
+}
+
+.blog-post a {
   text-decoration: none;
+  color: #333;
+}
+
+.blog-post a:hover {
+  color: #007BFF;
+}
+
+/* Style for normal links */
+.container a {
+  color: #000000; /* Example green color */
+  text-decoration: none; /* Remove the default underline */
+  font-weight: 500; /* Slightly bold */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Style for links when hovered */
+.container a:hover {
+  color: #000000;  /* Darker color on hover */
+  text-decoration: underline; /* Underline on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Style for visited links */
+.container a:visited {
+  color: #000000; /* Lighter color for visited links */
 }

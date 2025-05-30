@@ -1,0 +1,10 @@
+<h2>Sidebar</h2>
+<p>Additional information goes here.</p>
+
+{{ if .IsTranslated }}
+<h2>{{ i18n "translations" }}:</h2>
+
+  {{ range .Translations }}
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}{{ if .IsPage }} ({{ .Language.Lang }}){{ end }}</a>
+  {{ end }}
+{{ end }}
